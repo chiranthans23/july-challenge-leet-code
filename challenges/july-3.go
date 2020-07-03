@@ -1,23 +1,34 @@
 package challenges
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 // PrisonCellsNDays -
 func PrisonCellsNDays(cells []int, N int) []int {
-	var previousDayCells [8]int
+	var cycle int
+	var pattern [8]int
 
-	for i := 1; i <= N; i++ {
-		copy(previousDayCells[:], cells)
+	for i := N; i > 0; i-- {
+		var temp [8]int
 		for j := 1; j <= 6; j++ {
-			cells[j] = xnor(previousDayCells[j-1], previousDayCells[j+1])
+			temp[j] = xnor(cells[j-1], cells[j+1])
 		}
-		if i == 1 {
-			cells[0] = 0
-			cells[7] = 0
+		if cycle == 0 {
+			copy(pattern[:], temp[:])
+		} else if reflect.DeepEqual(temp, pattern) {
+			i %= cycle
+			fmt.Println(i)
 		}
-		fmt.Printf("Cells after %d days:", i)
-		fmt.Println(cells)
+		if i == 0 {
+			return cells
+		}
+
+		copy(cells, temp[:])
+		cycle++
 	}
+
 	return cells
 }
 
