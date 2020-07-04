@@ -7,6 +7,6 @@ import (
 )
 
 func main() {
-	fmt.Println(challenges.PrisonCellsNDays([]int{0, 0, 0, 1, 1, 0, 1, 0}, 574))
+	fmt.Println(challenges.NthUglyNumber(10))
 
 }
