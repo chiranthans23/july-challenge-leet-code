@@ -7,6 +7,6 @@ import (
 )
 
 func main() {
-	fmt.Println(challenges.NthUglyNumber(10))
+	fmt.Println(challenges.LevelOrderBottom(nil))
 
 }
