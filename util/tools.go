@@ -1,11 +1,23 @@
 package util
 
-import "testing"
+import (
+	"reflect"
+	"testing"
+)
 
 // AssertEquals -
 func AssertEquals(t *testing.T, actual, expected interface{}) {
 
 	if actual != expected {
+		t.Errorf("Expected %v, got %v", expected, actual)
+	}
+
+}
+
+// AssertEqualsIntArray -
+func AssertEqualsIntArray(t *testing.T, actual, expected []int) {
+
+	if !reflect.DeepEqual(actual, expected) {
 		t.Errorf("Expected %v, got %v", expected, actual)
 	}
 
