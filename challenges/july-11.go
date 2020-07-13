@@ -1,6 +1,6 @@
 package challenges
 
-func subsets(nums []int) [][]int {
+func Subsets(nums []int) [][]int {
 	subsets := [][]int{[]int{}}
 	for _, num := range nums {
 		for _, subset := range subsets {
@@ -8,6 +8,7 @@ func subsets(nums []int) [][]int {
 			newSubset = append(newSubset, num)
 			subsets = append(subsets, newSubset)
 		}
+		// fmt.Printf("Subsets %v", subsets)
 	}
 	return subsets
 }

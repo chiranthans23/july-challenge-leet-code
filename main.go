@@ -7,6 +7,6 @@ import (
 )
 
 func main() {
-	fmt.Println(challenges.IslandPerimeter([][]int{{0, 1}}))
+	fmt.Println(challenges.Subsets([]int{9, 0, 3, 5, 7}))
 
 }
