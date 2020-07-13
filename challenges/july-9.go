@@ -4,11 +4,11 @@ import "math"
 
 func widthOfBinaryTree(root *TreeNode) int {
 	width := 0
-	bfs([]*TreeNode{root}, 0, []int{0}, &width)
+	bfs([]*TreeNode{root}, []int{0}, &width)
 	return width
 }
 
-func bfs(nodes []*TreeNode, level int, order []int, width *int) {
+func bfs(nodes []*TreeNode, order []int, width *int) {
 	if len(nodes) == 0 {
 		return
 	}
@@ -25,7 +25,7 @@ func bfs(nodes []*TreeNode, level int, order []int, width *int) {
 			nextOrder = append(nextOrder, order[i]*2+1)
 		}
 	}
-	bfs(nextLevel, level+1, nextOrder, width)
+	bfs(nextLevel, nextOrder, width)
 }
 
 func max(values ...int) int {
