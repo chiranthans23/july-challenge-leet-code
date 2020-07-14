@@ -7,6 +7,6 @@ import (
 )
 
 func main() {
-	fmt.Println(challenges.Subsets([]int{9, 0, 3, 5, 7}))
+	fmt.Println(challenges.ReverseBits(2))
 
 }
