@@ -7,6 +7,6 @@ import (
 )
 
 func main() {
-	fmt.Println(challenges.ReverseBits(2))
+	fmt.Println(challenges.AngleClock(12, 30))
 
 }
