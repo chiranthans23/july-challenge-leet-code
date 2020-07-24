@@ -25,7 +25,7 @@ func DFS(board [][]byte, i int, j int, word string, index int) bool {
 	}
 
 	temp := board[i][j]
-	board[i][j] = 'c'
+	board[i][j] = '*'
 
 	a := DFS(board, i+1, j, word, index+1) || DFS(board, i, j+1, word, index+1) || DFS(board, i-1, j, word, index+1) || DFS(board, i, j-1, word, index+1)
 
